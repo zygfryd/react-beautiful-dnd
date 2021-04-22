@@ -23,11 +23,11 @@ export default ({
 }: GetOnAxisArgs): number => {
   const thresholds: DistanceThresholds = getDistanceThresholds(container, axis);
   const isCloserToEnd: boolean =
-    distanceToEdges[axis.end] < distanceToEdges[axis.start];
+    distanceToEdges[axis.end()] < distanceToEdges[axis.start()];
 
   if (isCloserToEnd) {
     return getValue({
-      distanceToEdge: distanceToEdges[axis.end],
+      distanceToEdge: distanceToEdges[axis.end()],
       thresholds,
       dragStartTime,
       shouldUseTimeDampening,
@@ -37,7 +37,7 @@ export default ({
   return (
     -1 *
     getValue({
-      distanceToEdge: distanceToEdges[axis.start],
+      distanceToEdge: distanceToEdges[axis.start()],
       thresholds,
       dragStartTime,
       shouldUseTimeDampening,

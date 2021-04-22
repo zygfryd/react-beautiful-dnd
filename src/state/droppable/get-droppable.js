@@ -13,6 +13,8 @@ import { origin } from '../position';
 import getMaxScroll from '../get-max-scroll';
 import getSubject from './util/get-subject';
 
+// console.log('*',{ vertical, horizontal });
+
 export type Closest = {|
   client: BoxModel,
   page: BoxModel,

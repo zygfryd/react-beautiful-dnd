@@ -25,7 +25,6 @@ export default memoizeOne(
         (a: DraggableDimension, b: DraggableDimension): number =>
           a.descriptor.index - b.descriptor.index,
       );
-
     return result;
   },
 );

@@ -80,7 +80,16 @@ export default function calculateReorderImpact({
   forceShouldAnimate,
 }: Args): DragImpact {
   const inHomeList: boolean = isHomeOf(draggable, destination);
-
+  // console.log({
+  //   draggable,
+  //   insideDestination,
+  //   destination,
+  //   viewport,
+  //   displacedBy,
+  //   last,
+  //   index,
+  //   forceShouldAnimate,
+  // })
   // Go into last spot of list
   if (index == null) {
     return goAtEnd({
@@ -96,6 +105,7 @@ export default function calculateReorderImpact({
     insideDestination,
     (item: DraggableDimension) => item.descriptor.index === index,
   );
+  // console.log('*',match);
 
   if (!match) {
     return goAtEnd({

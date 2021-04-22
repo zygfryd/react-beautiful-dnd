@@ -95,7 +95,7 @@ function Item(props: ItemProps) {
           // what the raw right value would be
           const targetRight: number =
             box.borderBox.left + proposedLeftOffset + targetWidth;
-
+          console.log('left offset');
           // how much we would be going past the right value
           const rightOverlap: number = Math.max(
             targetRight - box.borderBox.right,

@@ -41,7 +41,6 @@ const noPointerEvents: string = 'pointer-events: none;';
 
 export default (contextId: ContextId): Styles => {
   const getSelector = makeGetSelector(contextId);
-
   // ## Drag handle styles
 
   // -webkit-touch-callout

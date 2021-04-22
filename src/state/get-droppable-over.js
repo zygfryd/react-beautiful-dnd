@@ -110,12 +110,12 @@ export default function getDroppableOver({
 
       const axis: Axis = item.axis;
       const childCenter: number = active.center[axis.crossAxisLine];
-      const crossAxisStart: number = pageBorderBox[axis.crossAxisStart];
-      const crossAxisEnd: number = pageBorderBox[axis.crossAxisEnd];
+      const crossAxisStart: number = pageBorderBox[axis.crossAxisStart()];
+      const crossAxisEnd: number = pageBorderBox[axis.crossAxisEnd()];
 
       const isContained = isWithin(
-        active[axis.crossAxisStart],
-        active[axis.crossAxisEnd],
+        active[crossAxisStart],
+        active[crossAxisEnd],
       );
 
       const isStartContained: boolean = isContained(crossAxisStart);

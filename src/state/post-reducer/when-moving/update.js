@@ -37,7 +37,6 @@ export default ({
 }: Args): StateWhenUpdatesAllowed => {
   // DRAGGING: can update position and impact
   // COLLECTING: can update position but cannot update impact
-
   const viewport: Viewport = forcedViewport || state.viewport;
   const dimensions: DimensionMap = forcedDimensions || state.dimensions;
   const clientSelection: Position =

@@ -45,8 +45,8 @@ export default ({
   );
   const displacement: number = displacedBy.value;
 
-  const targetStart: number = targetRect[axis.start];
-  const targetEnd: number = targetRect[axis.end];
+  const targetStart: number = targetRect[axis.start()];
+  const targetEnd: number = targetRect[axis.end()];
 
   const withoutDragging: DraggableDimension[] = removeDraggableFromList(
     draggable,
@@ -76,36 +76,38 @@ export default ({
         As soon as a boundary is hit then no longer combining
       */
 
+      //NOT HERE
+
       if (didStartAfterCritical) {
         // In original position
         // Will combine with item when inside a band
         if (isDisplaced) {
           return (
-            targetEnd > childRect[axis.start] + threshold &&
-            targetEnd < childRect[axis.end] - threshold
+            targetEnd > childRect[axis.start()] + threshold &&
+            targetEnd < childRect[axis.end()] - threshold
           );
         }
 
         // child is now 'displaced' backwards from where it started
         // want to combine when we move backwards onto it
         return (
-          targetStart > childRect[axis.start] - displacement + threshold &&
-          targetStart < childRect[axis.end] - displacement - threshold
+          targetStart > childRect[axis.start()] - displacement + threshold &&
+          targetStart < childRect[axis.end()] - displacement - threshold
         );
       }
 
       // item has moved forwards
       if (isDisplaced) {
         return (
-          targetEnd > childRect[axis.start] + displacement + threshold &&
-          targetEnd < childRect[axis.end] + displacement - threshold
+          targetEnd > childRect[axis.start()] + displacement + threshold &&
+          targetEnd < childRect[axis.end()] + displacement - threshold
         );
       }
 
       // is in resting position - being moved backwards on to
       return (
-        targetStart > childRect[axis.start] + threshold &&
-        targetStart < childRect[axis.end] - threshold
+        targetStart < childRect[axis.start()] + threshold &&
+        targetStart > childRect[axis.end()] - threshold
       );
     },
   );

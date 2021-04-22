@@ -116,7 +116,7 @@ const getStyle = ({
 
 function Placeholder(props: Props): Node {
   const animateOpenTimerRef = useRef<?TimeoutID>(null);
-
+  console.log('props*********', props);
   const tryClearAnimateOpenTimer = useCallback(() => {
     if (!animateOpenTimerRef.current) {
       return;

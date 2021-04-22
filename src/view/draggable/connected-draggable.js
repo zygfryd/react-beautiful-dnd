@@ -338,7 +338,6 @@ export const makeMapStateToProps = (): Selector => {
     draggingSelector(state, ownProps) ||
     secondarySelector(state, ownProps) ||
     atRest;
-
   return selector;
 };
 

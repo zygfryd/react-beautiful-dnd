@@ -98,30 +98,32 @@ export default class AuthorList extends Component<Props> {
     const { listId, listType, internalScroll, isCombineEnabled } = this.props;
 
     return (
-      <Droppable
-        droppableId={listId}
-        type={listType}
-        direction="horizontal"
-        isCombineEnabled={isCombineEnabled}
-      >
-        {(
-          dropProvided: DroppableProvided,
-          dropSnapshot: DroppableStateSnapshot,
-        ) => (
-          <Wrapper
-            isDraggingOver={dropSnapshot.isDraggingOver}
-            {...dropProvided.droppableProps}
-          >
-            {internalScroll ? (
-              <ScrollContainer>
-                {this.renderBoard(dropProvided)}
-              </ScrollContainer>
-            ) : (
-              this.renderBoard(dropProvided)
-            )}
-          </Wrapper>
-        )}
-      </Droppable>
+      <div>
+        <Droppable
+          droppableId={listId}
+          type={listType}
+          direction="horizontal"
+          isCombineEnabled={isCombineEnabled}
+        >
+          {(
+            dropProvided: DroppableProvided,
+            dropSnapshot: DroppableStateSnapshot,
+          ) => (
+            <Wrapper
+              isDraggingOver={dropSnapshot.isDraggingOver}
+              {...dropProvided.droppableProps}
+            >
+              {internalScroll ? (
+                <ScrollContainer>
+                  {this.renderBoard(dropProvided)}
+                </ScrollContainer>
+              ) : (
+                this.renderBoard(dropProvided)
+              )}
+            </Wrapper>
+          )}
+        </Droppable>
+      </div>
     );
   }
 }

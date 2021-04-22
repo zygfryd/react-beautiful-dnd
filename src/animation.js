@@ -68,7 +68,6 @@ export const transforms = {
     if (!isCombining) {
       return translate;
     }
-
     // when dropping while combining we also update the scale
     return `${translate} scale(${combine.scale.drop})`;
   },

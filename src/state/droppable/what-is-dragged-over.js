@@ -3,7 +3,6 @@ import type { ImpactLocation, DroppableId, DragImpact } from '../../types';
 
 export default (impact: DragImpact): ?DroppableId => {
   const at: ?ImpactLocation = impact.at;
-
   if (!at) {
     return null;
   }

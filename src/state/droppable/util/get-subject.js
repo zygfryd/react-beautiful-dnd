@@ -25,7 +25,7 @@ const increase = (
   if (withPlaceholder && withPlaceholder.increasedBy) {
     return {
       ...target,
-      [axis.end]: target[axis.end] + withPlaceholder.increasedBy[axis.line],
+      [axis.end()]: target[axis.end()] + withPlaceholder.increasedBy[axis.line],
     };
   }
   return target;

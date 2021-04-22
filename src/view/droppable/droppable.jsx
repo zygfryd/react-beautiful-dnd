@@ -88,7 +88,7 @@ export default function Droppable(props: Props) {
     ignoreContainerClipping,
     getDroppableRef,
   });
-
+  console.log('props with shouldAnimate', props)
   const placeholder: Node = (
     <AnimateInOut
       on={props.placeholder}

@@ -1,5 +1,5 @@
 // @flow
-import type { BoxModel, Rect, Position } from 'css-box-model';
+import type { BoxModel, Position, Rect } from 'css-box-model';
 
 export type Id = string;
 export type DraggableId = Id;
@@ -36,25 +36,25 @@ export type Direction = 'horizontal' | 'vertical';
 export type VerticalAxis = {|
   direction: 'vertical',
   line: 'y',
-  start: 'top',
-  end: 'bottom',
+  start: () => 'top',
+  end: () => 'bottom',
   size: 'height',
   crossAxisLine: 'x',
-  crossAxisStart: 'left',
-  crossAxisEnd: 'right',
+  crossAxisStart: () => 'left' | 'right',
+  crossAxisEnd: () => 'right' | 'left',
   crossAxisSize: 'width',
 |};
 
 export type HorizontalAxis = {|
   direction: 'horizontal',
   line: 'x',
-  start: 'left',
-  end: 'right',
+  start: () => 'right' | 'left',
+  end: () => 'left' | 'right',
   size: 'width',
   crossAxisLine: 'y',
   crossAxisStart: 'top',
-  crossAxisEnd: 'bottom',
-  crossAxisSize: 'height',
+  crossAxisEnd: () => 'bottom',
+  crossAxisSize: () => 'height',
 |};
 
 export type Axis = VerticalAxis | HorizontalAxis;
