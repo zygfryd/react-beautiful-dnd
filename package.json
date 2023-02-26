@@ -1,7 +1,7 @@
 {
   "name": "react-beautiful-dnd",
-  "version": "13.1.0",
-  "description": "Beautiful and accessible drag and drop for lists with React",
+  "version": "13.1.0-portals",
+  "description": "Beautiful and accessible drag and drop for lists with React / portal fix fork",
   "author": "Alex Reardon <areardon@atlassian.com>",
   "keywords": [
     "drag and drop",
@@ -17,10 +17,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/atlassian/react-beautiful-dnd.git"
+    "url": "https://github.com/zygfryd/react-beautiful-dnd.git"
   },
   "bugs": {
-    "url": "https://github.com/atlassian/react-beautiful-dnd/issues"
+    "url": "https://github.com/zygfryd/react-beautiful-dnd/issues"
   },
   "main": "dist/react-beautiful-dnd.cjs.js",
   "module": "dist/react-beautiful-dnd.esm.js",
